@@ -77,7 +77,6 @@ dialog .adm{margin-top:18px}
   <div class="logo" aria-hidden="true">Ç</div>
   <div><h1>Çiğdem Öğretmen</h1><p>Arduino ile robotik kodlama</p></div>
 </header>
-<div id="bar"></div>
 <p class="intro">Her hafta işlediğimiz konuları, kullandığımız malzemeleri ve örnek kodları buradan tekrar edebilirsin.</p>
 <div class="layout">
   <main>
@@ -87,10 +86,9 @@ dialog .adm{margin-top:18px}
   <aside><section class="olimp" aria-labelledby="oh"><h2 id="oh">Bilim Olimpiyatları · Ders Notları</h2><div id="olimp"></div></section></aside>
 </div>
 </div>
-<dialog id="dlg"></dialog>
-<script id="state" type="application/json">{"weeks": [{"t": "Arduino’ya giriş", "s": "Kartı tanıyalım, ilk kodumuzu yükleyelim", "k": ["Arduino kartının bölümlerini söyleyebilirim", "Arduino IDE’de kod yazıp karta yükleyebilirim", "setup() ve loop() işlevlerinin görevini açıklayabilirim"], "m": ["Arduino Uno", "USB kablosu", "Bilgisayar"], "c": "void setup() {\n  pinMode(LED_BUILTIN, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(LED_BUILTIN, HIGH);\n  delay(1000);\n  digitalWrite(LED_BUILTIN, LOW);\n  delay(1000);\n}", "h": "Karttaki parçaları defterine çiz ve adlarını yaz."}, {"t": "LED ve breadboard", "s": "Devre kuralım, dijital çıkış verelim", "k": ["Breadboard bağlantılarını doğru yapabilirim", "LED’i dirençle güvenli şekilde bağlayabilirim", "Üç LED’i sırayla yakabilirim"], "m": ["3 LED", "3 adet 220 Ω direnç", "Breadboard", "Jumper kablo"], "c": "int led1 = 8;\nint led2 = 9;\nint led3 = 10;\n\nvoid setup() {\n  pinMode(led1, OUTPUT);\n  pinMode(led2, OUTPUT);\n  pinMode(led3, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(led1, HIGH); delay(300);\n  digitalWrite(led1, LOW);\n  digitalWrite(led2, HIGH); delay(300);\n  digitalWrite(led2, LOW);\n  digitalWrite(led3, HIGH); delay(300);\n  digitalWrite(led3, LOW);\n}", "h": "LED’lerin yanma sırasını değiştir ve ne olduğunu yaz."}, {"t": "Buton ile kontrol", "s": "Dijital girişi okuyalım", "k": ["Butonu devreye bağlayabilirim", "digitalRead ile buton durumunu okuyabilirim", "if ile karar verebilirim"], "m": ["Buton", "10 kΩ direnç", "LED", "Jumper kablo"], "c": "int buton = 2;\nint led = 8;\n\nvoid setup() {\n  pinMode(buton, INPUT);\n  pinMode(led, OUTPUT);\n}\n\nvoid loop() {\n  if (digitalRead(buton) == HIGH) {\n    digitalWrite(led, HIGH);\n  } else {\n    digitalWrite(led, LOW);\n  }\n}", "h": "Butona bastığında LED’in sönmesi için kodu değiştir."}, {"t": "Analog giriş ve seri ekran", "s": "Potansiyometre ile değer okuyalım", "k": ["analogRead ile 0–1023 arası değer okuyabilirim", "Serial Monitor’da değerleri izleyebilirim"], "m": ["Potansiyometre", "Jumper kablo"], "c": "void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int deger = analogRead(A0);\n  Serial.println(deger);\n  delay(200);\n}", "h": "Potansiyometreyi en sola ve en sağa çevirip okuduğun değerleri not al."}, {"t": "PWM ile parlaklık", "s": "LED’in ışığını yavaş yavaş değiştirelim", "k": ["PWM’in ne işe yaradığını açıklayabilirim", "analogWrite ile parlaklığı ayarlayabilirim", "for döngüsü kullanabilirim"], "m": ["LED", "220 Ω direnç", "Potansiyometre"], "c": "int led = 9;\n\nvoid setup() {\n  pinMode(led, OUTPUT);\n}\n\nvoid loop() {\n  for (int p = 0; p \u003c= 255; p += 5) {\n    analogWrite(led, p);\n    delay(30);\n  }\n}", "h": "LED’in parlaklığını potansiyometre ile ayarlayan kodu yaz."}, {"t": "Ultrasonik mesafe sensörü", "s": "Robot engeli nasıl görür?", "k": ["HC-SR04 sensörünün çalışma mantığını anlatabilirim", "Mesafeyi santimetre olarak ölçebilirim"], "m": ["HC-SR04 sensör", "Jumper kablo"], "c": "int trig = 7;\nint echo = 6;\n\nvoid setup() {\n  pinMode(trig, OUTPUT);\n  pinMode(echo, INPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  digitalWrite(trig, LOW);\n  delayMicroseconds(2);\n  digitalWrite(trig, HIGH);\n  delayMicroseconds(10);\n  digitalWrite(trig, LOW);\n  long sure = pulseIn(echo, HIGH);\n  int cm = sure * 0.034 / 2;\n  Serial.println(cm);\n  delay(300);\n}", "h": "Cetvelle ölçtüğün mesafe ile sensörün ölçtüğünü karşılaştır."}, {"t": "Servo motor", "s": "Kolu istediğimiz açıya çevirelim", "k": ["Servo motoru karta bağlayabilirim", "Servo kütüphanesini kullanabilirim", "Motoru belirli açılara döndürebilirim"], "m": ["Servo motor", "Jumper kablo"], "c": "#include \u003cServo.h>\nServo kol;\n\nvoid setup() {\n  kol.attach(9);\n}\n\nvoid loop() {\n  kol.write(0);\n  delay(1000);\n  kol.write(90);\n  delay(1000);\n  kol.write(180);\n  delay(1000);\n}", "h": "Servo 45° ve 135°’ye de dönsün diye kodu güncelle."}, {"t": "Mini proje: park sensörü", "s": "Öğrendiklerimizi birleştirelim", "k": ["Sensör, LED ve karar yapısını bir arada kullanabilirim", "Projemi arkadaşlarıma anlatabilirim"], "m": ["HC-SR04 sensör", "LED", "Buzzer", "Breadboard"], "c": "// Engel yakınsa buzzer ötsün\nif (cm \u003c 15) {\n  digitalWrite(buzzer, HIGH);\n} else {\n  digitalWrite(buzzer, LOW);\n}", "h": "Mesafe azaldıkça hızlanan bir uyarı sesi tasarla."}], "olimp": [{"t": "Örnek: Bilişim olimpiyatı notu", "d": "Algoritma ve mantık", "n": "Ders notunu buraya yazabilirsiniz.\nSatır başları olduğu gibi görünür.", "l": ""}]}</script>
+<script src="icerik.js"></script>
 <script>
-var S=JSON.parse(document.getElementById("state").textContent);
+var S=window.ICERIK;
 var edit=false,dirty=false,canEdit=false,opened={0:true},openedN={};
 function $(i){return document.getElementById(i)}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
@@ -145,7 +143,7 @@ function renderBar(){
   var st=el("span","st",dirty?"Kaydedilmemiş değişiklikler var.":"");st.id="status";r.appendChild(st);
   b.appendChild(r);
 }
-function render(){renderBar();renderWeeks();renderOlimp()}
+function render(){renderWeeks();renderOlimp()}
 
 function openForm(title,fields,val,save){
   var d=$("dlg");d.innerHTML="";d.appendChild(el("h2",null,title));var inp={};
@@ -176,36 +174,16 @@ function editWeek(i){
 }
 function editOlimp(i){
   var o=i>=0?S.olimp[i]:{t:"",d:"",n:"",l:""};
-  openForm(i>=0?"Notu düzenle":"Yeni ders notu",[
-    {k:"t",label:"Konu başlığı"},{k:"d",label:"Alt başlık veya tarih (isteğe bağlı)"},
-    {k:"n",label:"Ders notu",area:1,rows:10},{k:"l",label:"Bağlantı (https:// ile başlamalı, isteğe bağlı)"}],
+  openForm(i>=0?"Duyuruyu düzenle":"Yeni duyuru",[
+    {k:"t",label:"Başlık"},{k:"d",label:"Tarih (isteğe bağlı)"},
+    {k:"n",label:"Açıklama",area:1,rows:3},{k:"l",label:"Bağlantı (https:// ile başlamalı, isteğe bağlı)"}],
     o,function(x){var y={t:x.t,d:x.d,n:x.n,l:safeUrl(x.l)};if(i>=0)S.olimp[i]=y;else S.olimp.push(y)});
 }
 
-async function publish(){
-  var st=$("status");st.textContent="Yayınlanıyor…";
-  try{
-    var a=await claude.use("artifact");
-    if(!a){st.textContent="Bu görünümde yayınlama kullanılamıyor.";return}
-    var c=document.documentElement.cloneNode(true);
-    c.querySelector("#state").textContent=JSON.stringify(S).replace(/</g,"\\u003c");
-    ["weeks","olimp","bar","dlg"].forEach(function(id){c.querySelector("#"+id).innerHTML=""});
-    c.querySelector("#dlg").removeAttribute("open");
-    await a.publish("<!DOCTYPE html>\n"+c.outerHTML);
-  }catch(e){
-    st.textContent=(e&&(e.code==="not_granted"||e.code==="not_writer"))?"Bu sayfayı değiştirme izniniz yok.":"Yayınlanamadı, tekrar deneyin.";
-  }
-}
 $("open").onclick=function(){document.querySelectorAll("#weeks details").forEach(function(d){d.open=true})};
 $("close").onclick=function(){document.querySelectorAll("#weeks details").forEach(function(d){d.open=false})};
 render();
-(async function(){
-  try{
-    if(typeof claude==="undefined")return;
-    var u=await claude.use("user");
-    if(u&&(u.canEdit()||u.isOwner())){canEdit=true;renderBar()}
-  }catch(e){}
-})();
+
 </script>
 </body>
 </html>
