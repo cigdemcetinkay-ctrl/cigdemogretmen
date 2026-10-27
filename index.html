@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Çiğdem Öğretmen · Haftalık Ders İçeriği</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Nunito:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f9ff;--surface:#fff;--ink:#17325c;--muted:#5b6f91;--blue:#2f7df6;--blue-d:#1d5fd1;--blue-l:#e3eeff;--pink:#ff6fa5;--pink-d:#d63f7d;--pink-l:#ffe3ee;--line:#d6e4fb;--code:#10213f;--code-ink:#dbe9ff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a2e;--surface:#172743;--ink:#eaf2ff;--muted:#9fb3d6;--blue-l:#1e3358;--pink-l:#3a2236;--line:#2a406b;--code:#0a1424}}
+:root[data-theme="dark"]{--bg:#0f1a2e;--surface:#172743;--ink:#eaf2ff;--muted:#9fb3d6;--blue-l:#1e3358;--pink-l:#3a2236;--line:#2a406b;--code:#0a1424}
+*{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Nunito',system-ui,sans-serif;font-size:17px;line-height:1.55}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 16px 48px}
+header{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.logo{width:52px;height:52px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font:800 26px 'Baloo 2',sans-serif;box-shadow:0 0 0 5px var(--pink-l);flex:none}
+h1{font:800 clamp(26px,6vw,36px)/1.1 'Baloo 2',system-ui,sans-serif;margin:0;color:var(--blue-d)}
+@media (prefers-color-scheme:dark){h1{color:#8bb8ff}}
+header p{margin:0;color:var(--muted);font-size:15px}
+.intro{margin:14px 0 20px;padding:14px 16px;background:var(--blue-l);border-radius:16px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
+@media (min-width:900px){.layout{grid-template-columns:minmax(0,1fr) 300px;align-items:start}aside{position:sticky;top:16px}}
+details{background:var(--surface);border:2px solid var(--line);border-radius:18px;margin-bottom:12px;overflow:hidden}
+details[open]{border-color:var(--blue)}
+summary{list-style:none;cursor:pointer;display:flex;align-items:center;gap:12px;padding:14px 16px}
+summary::-webkit-details-marker{display:none}
+summary:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--pink);outline-offset:2px}
+.num{flex:none;width:42px;height:42px;border-radius:50%;background:var(--pink);color:#fff;display:grid;place-items:center;font:800 19px 'Baloo 2',sans-serif}
+.t{flex:1;font:800 clamp(18px,4.6vw,21px)/1.25 'Baloo 2',system-ui,sans-serif}
+.t small{display:block;font:500 14px 'Nunito',sans-serif;color:var(--muted)}
+.chev{flex:none;width:12px;height:12px;border-right:3px solid var(--blue);border-bottom:3px solid var(--blue);transform:rotate(45deg);transition:transform .2s}
+details[open] .chev{transform:rotate(-135deg)}
+@media (prefers-reduced-motion:reduce){.chev{transition:none}}
+.body{padding:0 16px 16px}
+.body h3{font:800 17px 'Baloo 2',sans-serif;color:var(--pink-d);margin:14px 0 4px}
+.body ul{margin:0;padding-left:20px}
+pre{margin:6px 0 0;padding:14px;background:var(--code);color:#dbe9ff;border-radius:12px;overflow-x:auto;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace;max-width:100%}
+.hw{margin-top:14px;padding:12px 14px;background:var(--pink-l);border-radius:12px}
+.hw b{color:var(--pink-d)}
+.row,.adm,.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.row{margin-bottom:14px}
+.adm{margin-top:14px}
+.btn{border:0;border-radius:999px;padding:9px 16px;font:700 15px 'Nunito',sans-serif;cursor:pointer;background:var(--blue-l);color:var(--blue-d)}
+.btn.pink{background:var(--pink);color:#fff}
+.btn.del{background:var(--pink-l);color:var(--pink-d)}
+.bar{background:var(--pink-l);border:2px solid var(--pink);border-radius:16px;padding:10px 14px;margin:12px 0}
+.st{color:var(--pink-d);font-weight:700;font-size:15px}
+.olimp{background:var(--pink-l);border:2px solid var(--pink);border-radius:20px;padding:16px}
+.olimp h2{font:800 22px/1.2 'Baloo 2',sans-serif;color:var(--pink-d);margin:0 0 12px}
+.o{background:var(--surface);border-radius:14px;padding:12px 14px;margin-bottom:10px}
+.o h3{font:800 17px/1.25 'Baloo 2',sans-serif;margin:0 0 2px}
+.o .d{display:inline-block;background:var(--pink);color:#fff;border-radius:999px;padding:1px 10px;font-size:13px;font-weight:700;margin-bottom:4px}
+.o p{margin:2px 0;font-size:15px}
+.o a{color:var(--blue-d);font-weight:700;font-size:15px}
+@media (prefers-color-scheme:dark){.o a{color:#8bb8ff}}
+details.o{padding:0;border:0}
+.os{padding:12px 14px}
+.ot{flex:1;font:800 17px/1.25 'Baloo 2',sans-serif}
+.ot small{display:block;font:500 13px 'Nunito',sans-serif;color:var(--pink-d)}
+.ob{padding:0 14px 14px}
+.nt{white-space:pre-wrap;margin:0 0 8px;font-size:16px}
+.empty{color:var(--muted);text-align:center;padding:16px 0}
+dialog{border:0;border-radius:20px;padding:20px;width:min(560px,92vw);max-height:90vh;overflow:auto;background:var(--surface);color:var(--ink)}
+dialog::backdrop{background:rgba(10,20,40,.55)}
+dialog h2{font:800 22px 'Baloo 2',sans-serif;margin:0 0 4px;color:var(--blue-d)}
+dialog label{display:block;font-weight:700;margin:12px 0 4px;font-size:15px}
+dialog input,dialog textarea{width:100%;padding:10px 12px;border-radius:12px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:500 16px 'Nunito',sans-serif}
+dialog textarea.mono{font:14px/1.5 ui-monospace,Menlo,Consolas,monospace}
+dialog .adm{margin-top:18px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo" aria-hidden="true">Ç</div>
+  <div><h1>Çiğdem Öğretmen</h1><p>Arduino ile robotik kodlama</p></div>
+</header>
+<div id="bar"></div>
+<p class="intro">Her hafta işlediğimiz konuları, kullandığımız malzemeleri ve örnek kodları buradan tekrar edebilirsin.</p>
+<div class="layout">
+  <main>
+    <div class="row"><button class="btn" id="open">Hepsini aç</button><button class="btn" id="close">Hepsini kapat</button></div>
+    <div id="weeks"></div>
+  </main>
+  <aside><section class="olimp" aria-labelledby="oh"><h2 id="oh">Bilim Olimpiyatları · Ders Notları</h2><div id="olimp"></div></section></aside>
+</div>
+</div>
+<dialog id="dlg"></dialog>
+<script id="state" type="application/json">{"weeks": [{"t": "Arduino’ya giriş", "s": "Kartı tanıyalım, ilk kodumuzu yükleyelim", "k": ["Arduino kartının bölümlerini söyleyebilirim", "Arduino IDE’de kod yazıp karta yükleyebilirim", "setup() ve loop() işlevlerinin görevini açıklayabilirim"], "m": ["Arduino Uno", "USB kablosu", "Bilgisayar"], "c": "void setup() {\n  pinMode(LED_BUILTIN, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(LED_BUILTIN, HIGH);\n  delay(1000);\n  digitalWrite(LED_BUILTIN, LOW);\n  delay(1000);\n}", "h": "Karttaki parçaları defterine çiz ve adlarını yaz."}, {"t": "LED ve breadboard", "s": "Devre kuralım, dijital çıkış verelim", "k": ["Breadboard bağlantılarını doğru yapabilirim", "LED’i dirençle güvenli şekilde bağlayabilirim", "Üç LED’i sırayla yakabilirim"], "m": ["3 LED", "3 adet 220 Ω direnç", "Breadboard", "Jumper kablo"], "c": "int led1 = 8;\nint led2 = 9;\nint led3 = 10;\n\nvoid setup() {\n  pinMode(led1, OUTPUT);\n  pinMode(led2, OUTPUT);\n  pinMode(led3, OUTPUT);\n}\n\nvoid loop() {\n  digitalWrite(led1, HIGH); delay(300);\n  digitalWrite(led1, LOW);\n  digitalWrite(led2, HIGH); delay(300);\n  digitalWrite(led2, LOW);\n  digitalWrite(led3, HIGH); delay(300);\n  digitalWrite(led3, LOW);\n}", "h": "LED’lerin yanma sırasını değiştir ve ne olduğunu yaz."}, {"t": "Buton ile kontrol", "s": "Dijital girişi okuyalım", "k": ["Butonu devreye bağlayabilirim", "digitalRead ile buton durumunu okuyabilirim", "if ile karar verebilirim"], "m": ["Buton", "10 kΩ direnç", "LED", "Jumper kablo"], "c": "int buton = 2;\nint led = 8;\n\nvoid setup() {\n  pinMode(buton, INPUT);\n  pinMode(led, OUTPUT);\n}\n\nvoid loop() {\n  if (digitalRead(buton) == HIGH) {\n    digitalWrite(led, HIGH);\n  } else {\n    digitalWrite(led, LOW);\n  }\n}", "h": "Butona bastığında LED’in sönmesi için kodu değiştir."}, {"t": "Analog giriş ve seri ekran", "s": "Potansiyometre ile değer okuyalım", "k": ["analogRead ile 0–1023 arası değer okuyabilirim", "Serial Monitor’da değerleri izleyebilirim"], "m": ["Potansiyometre", "Jumper kablo"], "c": "void setup() {\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  int deger = analogRead(A0);\n  Serial.println(deger);\n  delay(200);\n}", "h": "Potansiyometreyi en sola ve en sağa çevirip okuduğun değerleri not al."}, {"t": "PWM ile parlaklık", "s": "LED’in ışığını yavaş yavaş değiştirelim", "k": ["PWM’in ne işe yaradığını açıklayabilirim", "analogWrite ile parlaklığı ayarlayabilirim", "for döngüsü kullanabilirim"], "m": ["LED", "220 Ω direnç", "Potansiyometre"], "c": "int led = 9;\n\nvoid setup() {\n  pinMode(led, OUTPUT);\n}\n\nvoid loop() {\n  for (int p = 0; p \u003c= 255; p += 5) {\n    analogWrite(led, p);\n    delay(30);\n  }\n}", "h": "LED’in parlaklığını potansiyometre ile ayarlayan kodu yaz."}, {"t": "Ultrasonik mesafe sensörü", "s": "Robot engeli nasıl görür?", "k": ["HC-SR04 sensörünün çalışma mantığını anlatabilirim", "Mesafeyi santimetre olarak ölçebilirim"], "m": ["HC-SR04 sensör", "Jumper kablo"], "c": "int trig = 7;\nint echo = 6;\n\nvoid setup() {\n  pinMode(trig, OUTPUT);\n  pinMode(echo, INPUT);\n  Serial.begin(9600);\n}\n\nvoid loop() {\n  digitalWrite(trig, LOW);\n  delayMicroseconds(2);\n  digitalWrite(trig, HIGH);\n  delayMicroseconds(10);\n  digitalWrite(trig, LOW);\n  long sure = pulseIn(echo, HIGH);\n  int cm = sure * 0.034 / 2;\n  Serial.println(cm);\n  delay(300);\n}", "h": "Cetvelle ölçtüğün mesafe ile sensörün ölçtüğünü karşılaştır."}, {"t": "Servo motor", "s": "Kolu istediğimiz açıya çevirelim", "k": ["Servo motoru karta bağlayabilirim", "Servo kütüphanesini kullanabilirim", "Motoru belirli açılara döndürebilirim"], "m": ["Servo motor", "Jumper kablo"], "c": "#include \u003cServo.h>\nServo kol;\n\nvoid setup() {\n  kol.attach(9);\n}\n\nvoid loop() {\n  kol.write(0);\n  delay(1000);\n  kol.write(90);\n  delay(1000);\n  kol.write(180);\n  delay(1000);\n}", "h": "Servo 45° ve 135°’ye de dönsün diye kodu güncelle."}, {"t": "Mini proje: park sensörü", "s": "Öğrendiklerimizi birleştirelim", "k": ["Sensör, LED ve karar yapısını bir arada kullanabilirim", "Projemi arkadaşlarıma anlatabilirim"], "m": ["HC-SR04 sensör", "LED", "Buzzer", "Breadboard"], "c": "// Engel yakınsa buzzer ötsün\nif (cm \u003c 15) {\n  digitalWrite(buzzer, HIGH);\n} else {\n  digitalWrite(buzzer, LOW);\n}", "h": "Mesafe azaldıkça hızlanan bir uyarı sesi tasarla."}], "olimp": [{"t": "Örnek: Bilişim olimpiyatı notu", "d": "Algoritma ve mantık", "n": "Ders notunu buraya yazabilirsiniz.\nSatır başları olduğu gibi görünür.", "l": ""}]}</script>
+<script>
+var S=JSON.parse(document.getElementById("state").textContent);
+var edit=false,dirty=false,canEdit=false,opened={0:true},openedN={};
+function $(i){return document.getElementById(i)}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+function btn(txt,cls,fn){var b=el("button","btn "+(cls||""),txt);b.type="button";b.onclick=fn;return b}
+function lines(s){return s.split("\n").map(function(x){return x.trim()}).filter(Boolean)}
+function safeUrl(u){return /^https?:\/\//i.test(u)?u:""}
+function change(){dirty=true;render()}
+function section(title,arr){var f=document.createDocumentFragment();f.appendChild(el("h3",null,title));var u=el("ul");arr.forEach(function(x){u.appendChild(el("li",null,x))});f.appendChild(u);return f}
+function admRow(onEdit,onDel){var r=el("div","adm");r.appendChild(btn("Düzenle","",onEdit));r.appendChild(btn("Sil","del",function(){if(confirm("Silinsin mi?"))onDel()}));return r}
+
+function renderWeeks(){
+  var m=$("weeks");m.innerHTML="";
+  S.weeks.forEach(function(w,i){
+    var d=document.createElement("details");d.open=!!opened[i];
+    d.addEventListener("toggle",function(){opened[i]=d.open});
+    var s=el("summary");s.appendChild(el("span","num",i+1));
+    var t=el("span","t",w.t);if(w.s)t.appendChild(el("small",null,w.s));
+    s.appendChild(t);s.appendChild(el("span","chev"));d.appendChild(s);
+    var b=el("div","body");
+    if(w.k.length)b.appendChild(section("Bu hafta öğreneceklerim",w.k));
+    if(w.m.length)b.appendChild(section("Malzemeler",w.m));
+    if(w.c){b.appendChild(el("h3",null,"Örnek kod"));b.appendChild(el("pre",null,w.c))}
+    if(w.h){var h=el("div","hw");h.appendChild(el("b",null,"Ev çalışması: "));h.appendChild(document.createTextNode(w.h));b.appendChild(h)}
+    if(edit)b.appendChild(admRow(function(){editWeek(i)},function(){S.weeks.splice(i,1);opened={};change()}));
+    d.appendChild(b);m.appendChild(d);
+  });
+  if(!S.weeks.length)m.appendChild(el("p","empty","Henüz hafta eklenmedi."));
+  if(edit)m.appendChild(btn("+ Hafta ekle","pink",function(){editWeek(-1)}));
+}
+function renderOlimp(){
+  var m=$("olimp");m.innerHTML="";
+  S.olimp.forEach(function(o,i){
+    var c=document.createElement("details");c.className="o";c.open=!!openedN[i];
+    c.addEventListener("toggle",function(){openedN[i]=c.open});
+    var s=el("summary","os");var t=el("span","ot",o.t);if(o.d)t.appendChild(el("small",null,o.d));
+    s.appendChild(t);s.appendChild(el("span","chev"));c.appendChild(s);
+    var b=el("div","ob");
+    if(o.n)b.appendChild(el("p","nt",o.n));
+    var u=safeUrl(o.l||"");
+    if(u){var a=el("a",null,"Bağlantıyı aç");a.href=u;a.target="_blank";a.rel="noopener noreferrer";b.appendChild(a)}
+    if(edit)b.appendChild(admRow(function(){editOlimp(i)},function(){S.olimp.splice(i,1);openedN={};change()}));
+    c.appendChild(b);m.appendChild(c);
+  });
+  if(!S.olimp.length)m.appendChild(el("p","empty","Ders notları yakında burada olacak."));
+  if(edit)m.appendChild(btn("+ Not ekle","pink",function(){editOlimp(-1)}));
+}
+function renderBar(){
+  var b=$("bar");b.innerHTML="";if(!canEdit)return;
+  var r=el("div","bar");
+  r.appendChild(btn(edit?"Düzenlemeyi kapat":"Siteyi düzenle","pink",function(){edit=!edit;render()}));
+  if(dirty)r.appendChild(btn("Yayınla","",publish));
+  var st=el("span","st",dirty?"Kaydedilmemiş değişiklikler var.":"");st.id="status";r.appendChild(st);
+  b.appendChild(r);
+}
+function render(){renderBar();renderWeeks();renderOlimp()}
+
+function openForm(title,fields,val,save){
+  var d=$("dlg");d.innerHTML="";d.appendChild(el("h2",null,title));var inp={};
+  fields.forEach(function(f){
+    var l=el("label",null,f.label);l.htmlFor="f_"+f.k;
+    var i=document.createElement(f.area?"textarea":"input");i.id="f_"+f.k;
+    if(f.area)i.rows=f.rows||3;if(f.code)i.className="mono";i.value=val[f.k]||"";
+    inp[f.k]=i;d.appendChild(l);d.appendChild(i);
+  });
+  var r=el("div","adm");
+  r.appendChild(btn("Kaydet","pink",function(){
+    var o={};fields.forEach(function(f){o[f.k]=inp[f.k].value.trim()});
+    if(!o[fields[0].k]){alert("Başlık boş olamaz.");return}
+    save(o);d.close();change();
+  }));
+  r.appendChild(btn("Vazgeç","",function(){d.close()}));
+  d.appendChild(r);d.showModal();
+}
+function editWeek(i){
+  var w=i>=0?S.weeks[i]:{t:"",s:"",k:[],m:[],c:"",h:""};
+  openForm(i>=0?"Haftayı düzenle":"Yeni hafta",[
+    {k:"t",label:"Başlık"},{k:"s",label:"Kısa açıklama"},
+    {k:"k",label:"Bu hafta öğrenecekleri (her satıra bir madde)",area:1,rows:4},
+    {k:"m",label:"Malzemeler (her satıra bir malzeme)",area:1,rows:3},
+    {k:"c",label:"Örnek kod",area:1,rows:8,code:1},{k:"h",label:"Ev çalışması",area:1,rows:2}],
+    {t:w.t,s:w.s,k:w.k.join("\n"),m:w.m.join("\n"),c:w.c,h:w.h},
+    function(o){var x={t:o.t,s:o.s,k:lines(o.k),m:lines(o.m),c:o.c,h:o.h};if(i>=0)S.weeks[i]=x;else{S.weeks.push(x);opened[S.weeks.length-1]=true}});
+}
+function editOlimp(i){
+  var o=i>=0?S.olimp[i]:{t:"",d:"",n:"",l:""};
+  openForm(i>=0?"Notu düzenle":"Yeni ders notu",[
+    {k:"t",label:"Konu başlığı"},{k:"d",label:"Alt başlık veya tarih (isteğe bağlı)"},
+    {k:"n",label:"Ders notu",area:1,rows:10},{k:"l",label:"Bağlantı (https:// ile başlamalı, isteğe bağlı)"}],
+    o,function(x){var y={t:x.t,d:x.d,n:x.n,l:safeUrl(x.l)};if(i>=0)S.olimp[i]=y;else S.olimp.push(y)});
+}
+
+async function publish(){
+  var st=$("status");st.textContent="Yayınlanıyor…";
+  try{
+    var a=await claude.use("artifact");
+    if(!a){st.textContent="Bu görünümde yayınlama kullanılamıyor.";return}
+    var c=document.documentElement.cloneNode(true);
+    c.querySelector("#state").textContent=JSON.stringify(S).replace(/</g,"\\u003c");
+    ["weeks","olimp","bar","dlg"].forEach(function(id){c.querySelector("#"+id).innerHTML=""});
+    c.querySelector("#dlg").removeAttribute("open");
+    await a.publish("<!DOCTYPE html>\n"+c.outerHTML);
+  }catch(e){
+    st.textContent=(e&&(e.code==="not_granted"||e.code==="not_writer"))?"Bu sayfayı değiştirme izniniz yok.":"Yayınlanamadı, tekrar deneyin.";
+  }
+}
+$("open").onclick=function(){document.querySelectorAll("#weeks details").forEach(function(d){d.open=true})};
+$("close").onclick=function(){document.querySelectorAll("#weeks details").forEach(function(d){d.open=false})};
+render();
+(async function(){
+  try{
+    if(typeof claude==="undefined")return;
+    var u=await claude.use("user");
+    if(u&&(u.canEdit()||u.isOwner())){canEdit=true;renderBar()}
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
